@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/codahale/bcrypt-ruby.git
-  revision: f2db689ba567d1a018f4dacb1ccf909adc93e887
+  revision: b293ecf81c8203ae105c04d511d8f969495b13e3
   specs:
     bcrypt (3.1.11)
 
@@ -43,7 +43,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.4)
-    autoprefixer-rails (8.3.0)
+    autoprefixer-rails (8.3.0.1)
       execjs
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
@@ -212,6 +212,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.2.6)
   rails_12factor
+  rake (~> 12.3.1)
   rmagick
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
