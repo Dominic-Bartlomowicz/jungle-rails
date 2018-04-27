@@ -51,6 +51,19 @@ main section.categories-show {
         font-size: 0.8em;
       }
 
+      aside.sold {
+        opacity: 0.5;
+        position: absolute;
+        color: white;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        background-color: red;
+        border-bottom-right-radius: 20px;
+        font-size: 0.8em;
+      }
+
+
       &:hover {
 
         border-color: #999;
@@ -58,6 +71,11 @@ main section.categories-show {
         footer {
           opacity: 1.0;
         }
+
+        aside.sold {
+          opacity: 1.0;
+        }
+
       }
 
     }
@@ -72,5 +90,3 @@ main section.products-show {
     }
   }
 }
-
-
