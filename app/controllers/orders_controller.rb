@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
 
     if order.valid?
       # empty_cart!
+      receipt
       redirect_to order, notice: 'Your Order has been placed.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
@@ -20,6 +21,8 @@ class OrdersController < ApplicationController
   end
 
   private
+
+  # Receipt functionality implemented with reference to https://github.com/excid3/receipts
 
   def empty_cart!
     # empty hash means no products in cart :)
@@ -54,6 +57,24 @@ class OrdersController < ApplicationController
     end
     order.save!
     order
+  end
+
+  def receipt
+    Receipts::Receipt.new(
+      id: "my-id",
+      product: "Jungle-Rails",
+      company: {
+        address: "test",
+        name: "Jungle Products",
+        email: "no-reply@jungle.com",
+      },
+      line_items: [
+        # ["Account Billed", "#{user.name} (#{user.email})"],
+        ["Product",        "Jungle-Rails"],
+        ["Amount",         "#{order.total_cents}"],
+        # ["Charged to",     "#{card_type} (**** **** **** #{card_last4})"],
+      ],
+    )
   end
 
   # returns total in cents not dollars (stripe uses cents as well)

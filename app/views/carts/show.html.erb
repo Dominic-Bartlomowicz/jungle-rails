@@ -4,6 +4,14 @@
     <h1>My Cart</h1>
   </header>
 
+    <% if cart.empty? %>
+
+      <div class="return">
+        <p>No items in cart! Please return to the <a href="/">home page</p>
+      </div>
+
+    <% else %>
+
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -33,6 +41,8 @@
     </table>
   </div>
 
+
+
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -49,5 +59,7 @@
       <% end %>
     </div>
   </div>
+
+  <% end %>
 
 </section>
