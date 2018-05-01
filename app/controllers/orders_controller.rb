@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 
     if order.valid?
       # empty_cart!
-      receipt
+      welcome_email
       redirect_to order, notice: 'Your Order has been placed.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
@@ -59,17 +59,6 @@ class OrdersController < ApplicationController
     order
   end
 
-  def receipt
-    Receipts::Receipt.new(
-      id: "my-id",
-      product: "Jungle-Rails",
-      company: {
-        address: "test",
-        name: "Jungle Products",
-        email: "no-reply@jungle.com",
-      },
-    )
-  end
 
   # returns total in cents not dollars (stripe uses cents as well)
   def cart_total
