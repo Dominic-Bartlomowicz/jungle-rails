@@ -7,9 +7,9 @@ RSpec.describe Product, type: :model do
     it 'saves given the validation of present name/price/quantity/category' do
       @category = Category.new
       @product = Product.new(:name => "Hipster Glasses",
-                                        :price => 20,
-                                        :quantity => 10,
-                                        :category => @category)
+                             :price => 20,
+                             :quantity => 10,
+                             :category => @category)
       @product.save!
       expect(@product.id).to be_present
     end
@@ -22,7 +22,6 @@ RSpec.describe Product, type: :model do
                                :price => 20,
                                :quantity => 10,
                                :category => @category)
-        puts(@product.valid?)
         expect(@product.valid?).not_to be_present
       end
 
