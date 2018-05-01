@@ -25,7 +25,6 @@ RSpec.feature "Visitor navigates from the home page to the product detail page",
   expect(page).to have_css 'article.product-detail'
 
   end
-
 end
 
 
