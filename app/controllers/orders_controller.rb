@@ -68,12 +68,6 @@ class OrdersController < ApplicationController
         name: "Jungle Products",
         email: "no-reply@jungle.com",
       },
-      line_items: [
-        # ["Account Billed", "#{user.name} (#{user.email})"],
-        ["Product",        "Jungle-Rails"],
-        ["Amount",         "#{order.total_cents}"],
-        # ["Charged to",     "#{card_type} (**** **** **** #{card_last4})"],
-      ],
     )
   end
 
